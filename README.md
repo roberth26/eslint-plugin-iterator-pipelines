@@ -1,5 +1,9 @@
 # eslint-plugin-iterator-pipelines
 
+[![npm version](https://img.shields.io/npm/v/eslint-plugin-iterator-pipelines)](https://www.npmjs.com/package/eslint-plugin-iterator-pipelines)
+[![npm downloads](https://img.shields.io/npm/dm/eslint-plugin-iterator-pipelines)](https://www.npmjs.com/package/eslint-plugin-iterator-pipelines)
+[![GitHub](https://img.shields.io/github/license/roberth26/eslint-plugin-iterator-pipelines)](https://github.com/roberth26/eslint-plugin-iterator-pipelines)
+
 ESLint plugin that detects array method pipelines which benefit from the [TC39 Iterator Helpers](https://github.com/tc39/proposal-iterator-helpers) API, and auto-fixes them in place.
 
 ## Hard requirement: Node ≥ 22
