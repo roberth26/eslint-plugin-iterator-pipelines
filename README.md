@@ -20,14 +20,12 @@ Benchmarks (Node 23, Apple M-series, `npm run bench`):
 
 ### `find()` — by array size
 
-| Array size | Array pipeline | Iterator pipeline | Winner |
-|---|---|---|---|
-| 100 elements | **1.26× faster** | — | array |
-| 1 000 elements | — | **1.22× faster** | iterator |
-| 10 000 elements | — | **1.39× faster** | iterator |
-| 100 000 elements | — | **6.32× faster** | iterator |
+The speedup depends on where the match falls, so no single multiplier is meaningful. The reliable signal is the break-even point:
 
-Break-even is around **~500–1 000 elements**.
+| Array size | Winner |
+|---|---|
+| < ~1 000 elements | array pipeline |
+| ≥ ~1 000 elements | iterator pipeline |
 
 ### `slice(0, n)` / `take(n)` — collecting first 10 elements
 
