@@ -12,10 +12,7 @@ Iterator Helpers shipped in V8 12.4, which means **Node 22+** (Chrome 117+, Fire
 
 ## When this actually helps
 
-The plugin is worth using in the **`find` / `some` / `every`** case when:
-
-1. The source array is large (≥ ~1 000 elements), **and**
-2. The match tends to appear in the first half of the array.
+The plugin is worth using in the **`find` / `some` / `every`** case when the source array is large (≥ ~1 000 elements). The iterator pipeline avoids building intermediate arrays and stops processing at the first match — you don't need to know where the match falls to benefit.
 
 `slice(0, n)` / `take(n)` is an even stronger case — the iterator only pulls the elements it needs regardless of where they are, so the gain scales directly with how much of the array is discarded.
 
@@ -31,17 +28,6 @@ Benchmarks (Node 23, Apple M-series, `npm run bench`):
 | 100 000 elements | — | **6.32× faster** | iterator |
 
 Break-even is around **~500–1 000 elements**.
-
-### `find()` — 100 000-element array, match position varies
-
-| Match position | Array pipeline | Iterator pipeline | Winner |
-|---|---|---|---|
-| 1% through | — | **62× faster** | iterator |
-| 10% through | — | **6.5× faster** | iterator |
-| 50% through | — | **1.3× faster** | iterator |
-| 99% through | **1.4× faster** | — | array |
-
-The iterator loses when the match is near the tail — at that point it has paid the iterator-protocol overhead on nearly every element without an early exit to show for it.
 
 ### `slice(0, n)` / `take(n)` — collecting first 10 elements
 
