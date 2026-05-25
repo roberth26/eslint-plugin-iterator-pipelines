@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-iterator-pipelines",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "ESLint plugin to optimize array pipelines using TC39 Iterator Helpers",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

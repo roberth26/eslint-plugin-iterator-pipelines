@@ -128,8 +128,7 @@ const rule: Rule.RuleModule = {
     messages: {
       preferIteratorPipelineShortCircuit:
         '"{{method}}" can exit before reaching the end of the sequence. An iterator pipeline avoids building intermediate arrays AND stops processing at the first match. ' +
-        'Apply when the array has ≥ ~1 000 elements and matches tend to appear early. ' +
-        'On smaller arrays, or when the match is near the tail, the array pipeline is faster.',
+        'Apply when the array has ≥ ~1 000 elements. On smaller arrays, the iterator protocol overhead makes this slower.',
 
       preferIteratorPipelineFullTraversal:
         '"{{method}}" processes every element — there is no early exit — so the iterator pipeline saves intermediate array allocation but gains no short-circuit benefit. ' +
