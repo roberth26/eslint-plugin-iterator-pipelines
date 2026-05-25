@@ -18,7 +18,7 @@ The plugin is worth using in the **`find` / `some` / `every`** case when the sou
 
 Benchmarks (Node 23, Apple M-series, `npm run bench`):
 
-### `find()` — match at ~10% through the array
+### `find()` — by array size
 
 | Array size | Array pipeline | Iterator pipeline | Winner |
 |---|---|---|---|
