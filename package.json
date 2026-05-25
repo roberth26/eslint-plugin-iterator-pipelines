@@ -1,0 +1,40 @@
+{
+  "name": "eslint-plugin-iterator-pipelines",
+  "version": "0.1.0",
+  "description": "ESLint plugin to optimize array pipelines using TC39 Iterator Helpers",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "bench": "vitest bench",
+    "lint:examples": "ESLINT_USE_FLAT_CONFIG=true eslint examples/",
+    "lint:examples:fix": "ESLINT_USE_FLAT_CONFIG=true eslint examples/ --fix",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.0.0"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.56.10",
+    "@types/estree": "^1.0.5",
+    "@types/node": "^20.12.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "vitest": "^2.0.0"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "iterator",
+    "iterator-helpers",
+    "performance",
+    "optimization",
+    "pipeline"
+  ],
+  "license": "MIT"
+}
